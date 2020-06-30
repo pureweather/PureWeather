@@ -1,4 +1,5 @@
 import 'package:PureWeather/generated/l10n.dart';
+import 'package:PureWeather/splash/SplashScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -9,47 +10,63 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
+    TabController controller;
+
+  @override
+  void initState() {
+    super.initState();
+
+    // Initialize the Tab Controller
+    controller = TabController(length: 3, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    // Dispose of the Tab Controller
+    controller.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+return Scaffold(
+      // Appbar
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
+        // Title
         title: Text(S.of(context).homePage),
+        // Set the background color of the App Bar
+        backgroundColor: Colors.blue,
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+      // Set the TabBar view as the body of the Scaffold
+      body: TabBarView(
+        // Add tabs as widgets
+        children: <Widget>[SplashScreen(), SplashScreen(), SplashScreen()],
+        // set the controller
+       controller: controller,
+      ),
+      // Set the bottom navigation bar
+      bottomNavigationBar: Material(
+        // set the color of the bottom navigation bar
+        color: Colors.blue,
+        // set the tab bar as the child of bottom navigation bar
+        child: TabBar(
+          tabs: <Tab>[
+            Tab(
+              // set icon to the tab
+              icon: Icon(Icons.favorite),
             ),
-
+            Tab(
+              icon: Icon(Icons.adb),
+            ),
+            Tab(
+              icon: Icon(Icons.airport_shuttle),
+            ),
           ],
+          // setup the controller
+          controller: controller,
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+    
   }
 }
