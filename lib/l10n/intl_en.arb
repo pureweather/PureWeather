@@ -1,4 +1,8 @@
 {
   "appName":"Pure Weather",
-  "homePage":"Home Page"
+  "homePage":"Home Page",
+  "home":"Home",
+  "forecast":"Forecast",
+  "search":"Search",
+  "settings":"Settings"
 }

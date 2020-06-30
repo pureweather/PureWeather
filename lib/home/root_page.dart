@@ -66,17 +66,21 @@ class _RootPageState extends State<RootPage>
         child: TabBar(
           tabs: <Tab>[
             Tab(
+              text: S.current.home,
               // set icon to the tab
               icon: SVGIcon("images/svg/ic_home.xml"),
             ),
             Tab(
+              text: S.current.forecast,
               //  icon: ImageIcon(Image(image: ImageProvider(),)),
               icon: SVGIcon("images/svg/ic_search.xml"),
             ),
             Tab(
+              text: S.current.search,
               icon: SVGIcon("images/svg/ic_search.xml"),
             ),
             Tab(
+              text: S.current.settings,
               icon: SVGIcon("images/svg/ic_settings.xml"),
             ),
           ],
