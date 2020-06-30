@@ -1,0 +1,28 @@
+name: Dart CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    container:
+      image:  google/dart:latest
+
+    steps:
+    - uses: actions/checkout@v1 
+    # Use the standard Java Action to setup Java 
+    - uses: actions/setup-java@v1
+      with:
+      	# we want the latest Java 12
+        java-version: '12.x'
+    # Use the community Action to install Flutter
+    - uses: subosito/flutter-action@v1
+      with:
+      	# we want the stable channel
+        channel: 'beta'  
