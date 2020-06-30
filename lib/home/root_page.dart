@@ -4,8 +4,11 @@ import 'package:PureWeather/home/home_page.dart';
 import 'package:PureWeather/home/search_page.dart';
 import 'package:PureWeather/home/setting_page.dart';
 import 'package:PureWeather/splash/SplashScreen.dart';
+import 'package:PureWeather/widget/s_v_g_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:flutter_svg/avd.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class RootPage extends StatefulWidget {
   RootPage({Key key}) : super(key: key);
@@ -64,16 +67,17 @@ class _RootPageState extends State<RootPage>
           tabs: <Tab>[
             Tab(
               // set icon to the tab
-              icon: Icon(Icons.favorite),
+              icon: SVGIcon("images/svg/ic_home.xml"),
             ),
             Tab(
-              icon: Icon(Icons.adb),
+              //  icon: ImageIcon(Image(image: ImageProvider(),)),
+              icon: SVGIcon("images/svg/ic_search.xml"),
             ),
             Tab(
-              icon: Icon(Icons.airport_shuttle),
+              icon: SVGIcon("images/svg/ic_search.xml"),
             ),
             Tab(
-              icon: Icon(Icons.airport_shuttle),
+              icon: SVGIcon("images/svg/ic_settings.xml"),
             ),
           ],
           // setup the controller
