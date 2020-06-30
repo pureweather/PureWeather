@@ -1,5 +1,5 @@
 import 'package:PureWeather/generated/l10n.dart';
-import 'package:PureWeather/home/home_page.dart';
+import 'package:PureWeather/home/root_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart';
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomePage(),
+      home: RootPage(),
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
