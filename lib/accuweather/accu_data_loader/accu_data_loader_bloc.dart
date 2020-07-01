@@ -26,7 +26,7 @@ class AccuDataLoaderBloc
       // Await the http get response, then decode the json-formatted response.
 
       var response = await http.get(
-          sprintf(AccuweatherConfig.HOURLY_12_URL, [areaId, "key is here"]));
+          sprintf(AccuweatherConfig.HOURLY_12_URL, [areaId, AccuweatherConfig.TEST_KEY]));
       if (response.statusCode == 200) {
         //JsonConvert<List<AccuHourlyDataEntity>> convert=JsonConvert();
         List jsonData = json.decode(response.body);

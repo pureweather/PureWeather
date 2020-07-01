@@ -9,4 +9,5 @@ class AccuweatherConfig {
       "https://api.accuweather.com/forecasts/v1/hourly/12hour/%s.json?details=true&apikey=%s";
   //10 days data url
   static final String DAYS_10_URL="https://api.accuweather.com/forecasts/v1/daily/10day/%s.json?details=true&apikey=%s";
+  static final String TEST_KEY="srRLeAmTroxPinDG8Aus3Ikl6tLGJd94";
 }
