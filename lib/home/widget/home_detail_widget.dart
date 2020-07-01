@@ -1,5 +1,6 @@
 import 'package:PureWeather/home/HomeInfo.dart';
 import 'package:flutter/material.dart';
+import 'package:weather_icons/weather_icons.dart';
 
 class HomeDetailWidget extends StatefulWidget {
   HomeDetailWidget({Key key}) : super(key: key);
@@ -38,6 +39,13 @@ class _HomeDetailWidgetState extends State<HomeDetailWidget> {
             _homeInfo.time,
             style: TextStyle(fontSize: 20),
             strutStyle: StrutStyle(),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.all(16),
+          child: Icon(
+            WeatherIcons.cloudy,
+            size: 100,
           ),
         ),
         Padding(
