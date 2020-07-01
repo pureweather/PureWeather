@@ -1,22 +1,17 @@
+import 'package:PureWeather/accuweather/hourly/accu_hourly_data_entity.dart';
 import 'package:PureWeather/home/HomeInfo.dart';
 import 'package:flutter/material.dart';
 import 'package:weather_icons/weather_icons.dart';
 
-class HomeDetailWidget extends StatefulWidget {
-  HomeDetailWidget({Key key}) : super(key: key);
+class HomeDetailWidget extends StatelessWidget {
+  AccuHourlyDataEntity accuHourlyDataEntity;
+  HomeInfo _homeInfo = HomeInfo();
+  String placeName="";
 
-  @override
-  _HomeDetailWidgetState createState() => _HomeDetailWidgetState();
-}
-
-class _HomeDetailWidgetState extends State<HomeDetailWidget> {
-  HomeInfo _homeInfo;
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    _homeInfo = HomeInfo();
-    super.initState();
+  HomeDetailWidget(AccuHourlyDataEntity accuHourlyDataEntity,String placeName, {Key key})
+      : super(key: key) {
+    this.accuHourlyDataEntity = accuHourlyDataEntity;
+    this.placeName=placeName;
   }
 
   @override
@@ -28,7 +23,7 @@ class _HomeDetailWidgetState extends State<HomeDetailWidget> {
         Padding(
           padding: EdgeInsets.all(16),
           child: Text(
-            _homeInfo.placeName,
+            placeName,
             style: TextStyle(fontSize: 20),
             strutStyle: StrutStyle(),
           ),
@@ -44,14 +39,17 @@ class _HomeDetailWidgetState extends State<HomeDetailWidget> {
         Padding(
           padding: EdgeInsets.all(16),
           child: Icon(
-            WeatherIcons.cloudy,
+            WeatherIcons.night_partly_cloudy,
+            color: Colors.green,
             size: 100,
           ),
         ),
         Padding(
           padding: EdgeInsets.all(16),
           child: Text(
-            _homeInfo.temperature,
+            accuHourlyDataEntity == null
+                ? "26"
+                : accuHourlyDataEntity.temperature.toString(),
             style: TextStyle(fontSize: 20),
             strutStyle: StrutStyle(),
           ),

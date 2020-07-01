@@ -26,6 +26,9 @@ dependencies:
   intl: ^0.16.1  
   flutter_svg: ^0.17.4
   weather_icons: ^2.0.1
+  flutter_bloc: ^4.0.1
+  http: ^0.12.1
+  sprintf: ^4.0.2
   flutter_localizations:
     sdk: flutter
 

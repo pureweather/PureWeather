@@ -1,0 +1,3 @@
+class AccuExtraArg{
+  String areaName="";
+}
