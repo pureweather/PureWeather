@@ -42,7 +42,7 @@ class _RootPageState extends State<RootPage>
       // Appbar
       appBar: AppBar(
         // Title
-        title: Text(S.of(context).homePage),
+        title: Text(S.current.appName),
         // Set the background color of the App Bar
         backgroundColor: Colors.blue,
       ),
