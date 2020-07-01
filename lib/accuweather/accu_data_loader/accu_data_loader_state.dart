@@ -3,7 +3,8 @@ part of 'accu_data_loader_bloc.dart';
 @immutable
 abstract class AccuDataLoaderState {
   List<AccuHourlyDataEntity> hourlyDataList;
-  int code;
+  CurrentDataEntity currentDataEntity;
+  int code = -1;
   String areaName = "";
 
   AccuHourlyDataEntity getFirstEntity() {

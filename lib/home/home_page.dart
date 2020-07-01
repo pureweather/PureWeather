@@ -1,3 +1,4 @@
+import 'package:PureWeather/accuweather/accu_data_loader/AccuDataType.dart';
 import 'package:PureWeather/accuweather/accu_data_loader/accu_data_loader_bloc.dart';
 import 'package:PureWeather/accuweather/hourly/accu_hourly_data_entity.dart';
 import 'package:PureWeather/home/widget/home_detail_widget.dart';
@@ -19,7 +20,8 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    AccuDataLoaderEventImpl accuDataLoaderEvent = AccuDataLoaderEventImpl();
+    AccuDataLoaderEventImpl accuDataLoaderEvent =
+        AccuDataLoaderEventImpl(AccuDataType.TYPE_CURRENT);
 
     _bloc.add(accuDataLoaderEvent);
   }
@@ -33,10 +35,10 @@ class _HomePageState extends State<HomePage> {
               return Column(
                 children: [
                   HomeDetailWidget(
-                    dataEntity: counterState.getFirstEntity(),
+                    dataEntity: counterState.currentDataEntity,
                     placeName: counterState.areaName,
                   ),
-                  InfoTabWidget()
+                  InfoTabWidget(dataEntity: counterState.currentDataEntity)
                 ],
               );
             }));

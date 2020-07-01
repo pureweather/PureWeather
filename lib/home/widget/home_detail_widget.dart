@@ -1,3 +1,4 @@
+import 'package:PureWeather/accuweather/current/current_data_entity.dart';
 import 'package:PureWeather/accuweather/hourly/accu_hourly_data_entity.dart';
 import 'package:PureWeather/home/HomeInfo.dart';
 import 'package:common_utils/common_utils.dart';
@@ -6,7 +7,7 @@ import 'package:weather_icons/weather_icons.dart';
 
 // ignore: must_be_immutable
 class HomeDetailWidget extends StatefulWidget {
-  final AccuHourlyDataEntity dataEntity;
+  final CurrentDataEntity dataEntity;
   HomeInfo _homeInfo = HomeInfo();
   String placeName = "";
 
@@ -45,7 +46,10 @@ class _HomeDetailWidgetState extends State<HomeDetailWidget> {
           padding: EdgeInsets.all(16),
           child: Text(
             widget.dataEntity != null
-                ? DateUtil.formatDate(DateTime.parse(widget.dataEntity.dateTime),format: "yyyy-MM-dd HH:mm:ss")//.widget.dataEntity.dateTime.toString()
+                ? DateUtil.formatDate(
+                    DateTime.parse(widget.dataEntity.localObservationDateTime),
+                    format:
+                        "yyyy-MM-dd HH:mm:ss") //.widget.dataEntity.dateTime.toString()
                 : "Loading",
             style: TextStyle(fontSize: 20),
             strutStyle: StrutStyle(),
@@ -62,7 +66,7 @@ class _HomeDetailWidgetState extends State<HomeDetailWidget> {
           padding: EdgeInsets.all(16),
           child: Text(
             widget.dataEntity != null
-                ? widget.dataEntity.temperature.toString()
+                ? widget.dataEntity.temperature.metric.toString()
                 : "26!",
             style: TextStyle(fontSize: 20),
             strutStyle: StrutStyle(),
