@@ -59,6 +59,10 @@ flutter:
     - images/svg/ic_search.xml
     - images/svg/ic_home.xml
     - images/svg/ic_settings.xml
+    - images/svg/ic_pressure.xml
+    - images/svg/ic_humidity.xml
+    - images/svg/ic_wind.xml
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

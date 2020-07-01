@@ -1,5 +1,8 @@
 import 'package:PureWeather/accuweather/current/current_data_entity.dart';
+import 'package:PureWeather/widget/s_v_g_icon.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/avd.dart';
+import 'package:weather_icons/weather_icons.dart';
 
 //detail type  widget
 class TemperatureInfoWidget extends StatefulWidget {
@@ -27,7 +30,7 @@ class _TemperatureInfoWidgetState extends State<TemperatureInfoWidget> {
       children: [
         Padding(
           padding: EdgeInsets.all(8),
-          child: Icon(Icons.event),
+          child: getIcon(),
         ),
         Padding(
           padding: EdgeInsets.all(8),
@@ -39,6 +42,19 @@ class _TemperatureInfoWidgetState extends State<TemperatureInfoWidget> {
         )
       ],
     );
+  }
+
+  SVGIcon getIcon() {
+    switch (widget.index) {
+      case 0:
+        return SVGIcon("images/svg/ic_humidity.xml");
+      case 1:
+        return SVGIcon("images/svg/ic_pressure.xml");
+      case 2:
+        return SVGIcon("images/svg/ic_wind.xml");
+        ;
+    }
+    return SVGIcon("images/svg/ic_humidity.xml");
   }
 
   String getType() {
