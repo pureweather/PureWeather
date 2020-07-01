@@ -56,15 +56,26 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - images/instant_weather_new.png
-    - images/svg/ic_search.xml
+    - images/instant_weather_new_foreground.png
+    - images/instant_weather_new_round.png
+    - images/svg/circle_blue_solid_background.xml
+    - images/svg/circle_orange_solid_background.xml
+    - images/svg/circle_orange_stroke_background.xml
+    - images/svg/ic_arrow_left.xml
+    - images/svg/ic_arrow_right.xml
+    - images/svg/ic_cached.xml
+    - images/svg/ic_close.xml
+    - images/svg/ic_format_list.xml
     - images/svg/ic_home.xml
-    - images/svg/ic_settings.xml
-    - images/svg/ic_pressure.xml
     - images/svg/ic_humidity.xml
+    - images/svg/ic_insert_chart.xml
+    - images/svg/ic_instant_weather_foreground.xml
+    - images/svg/ic_palette.xml
+    - images/svg/ic_pressure.xml
+    - images/svg/ic_search.xml
+    - images/svg/ic_settings.xml
+    - images/svg/ic_wb_sunny_black_24dp.xml
     - images/svg/ic_wind.xml
-
-
-
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

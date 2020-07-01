@@ -3,12 +3,9 @@ import 'package:PureWeather/home/forecast_page.dart';
 import 'package:PureWeather/home/home_page.dart';
 import 'package:PureWeather/home/search_page.dart';
 import 'package:PureWeather/home/setting_page.dart';
-import 'package:PureWeather/splash/SplashScreen.dart';
+import 'package:PureWeather/res.dart';
 import 'package:PureWeather/widget/s_v_g_icon.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'package:flutter_svg/avd.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class RootPage extends StatefulWidget {
   RootPage({Key key}) : super(key: key);
@@ -68,20 +65,20 @@ class _RootPageState extends State<RootPage>
             Tab(
               text: S.current.home,
               // set icon to the tab
-              icon: SVGIcon("images/svg/ic_home.xml"),
+              icon: SVGIcon(Res.ic_home),
             ),
             Tab(
               text: S.current.forecast,
               //  icon: ImageIcon(Image(image: ImageProvider(),)),
-              icon: SVGIcon("images/svg/ic_search.xml"),
+              icon: SVGIcon(Res.ic_search),
             ),
             Tab(
               text: S.current.search,
-              icon: SVGIcon("images/svg/ic_search.xml"),
+              icon: SVGIcon(Res.ic_search),
             ),
             Tab(
               text: S.current.settings,
-              icon: SVGIcon("images/svg/ic_settings.xml"),
+              icon: SVGIcon(Res.ic_settings),
             ),
           ],
           // setup the controller
