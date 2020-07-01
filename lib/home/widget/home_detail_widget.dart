@@ -1,5 +1,6 @@
 import 'package:PureWeather/accuweather/hourly/accu_hourly_data_entity.dart';
 import 'package:PureWeather/home/HomeInfo.dart';
+import 'package:common_utils/common_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:weather_icons/weather_icons.dart';
 
@@ -44,7 +45,7 @@ class _HomeDetailWidgetState extends State<HomeDetailWidget> {
           padding: EdgeInsets.all(16),
           child: Text(
             widget.dataEntity != null
-                ? widget.dataEntity.dateTime.toString()
+                ? DateUtil.formatDate(DateTime.parse(widget.dataEntity.dateTime),format: "yyyy-MM-dd HH:mm:ss")//.widget.dataEntity.dateTime.toString()
                 : "Loading",
             style: TextStyle(fontSize: 20),
             strutStyle: StrutStyle(),

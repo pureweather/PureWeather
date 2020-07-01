@@ -5,7 +5,7 @@ class AccuHourlyDataEntity with JsonConvert<AccuHourlyDataEntity> {
 	@JSONField(name: "DateTime")
 	String dateTime;
 	@JSONField(name: "EpochDateTime")
-	double epochDateTime;
+	int epochDateTime;
 	@JSONField(name: "WeatherIcon")
 	double weatherIcon;
 	@JSONField(name: "IconPhrase")

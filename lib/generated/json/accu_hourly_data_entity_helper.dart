@@ -5,7 +5,7 @@ accuHourlyDataEntityFromJson(AccuHourlyDataEntity data, Map<String, dynamic> jso
 		data.dateTime = json['DateTime']?.toString();
 	}
 	if (json['EpochDateTime'] != null) {
-		data.epochDateTime = json['EpochDateTime']?.toDouble();
+		data.epochDateTime = json['EpochDateTime']?.toInt();
 	}
 	if (json['WeatherIcon'] != null) {
 		data.weatherIcon = json['WeatherIcon']?.toDouble();
