@@ -330,7 +330,7 @@ class CurrentDataPressureMetric with JsonConvert<CurrentDataPressureMetric> {
 
   @override
   String toString() {
-    return 'CurrentDataPressureMetric{value: $value, unit: $unit}';
+    return '$value $unit';
   }
 
   @JSONField(name: "UnitType")

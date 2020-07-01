@@ -38,6 +38,9 @@ class _HomePageState extends State<HomePage> {
                     dataEntity: counterState.currentDataEntity,
                     placeName: counterState.areaName,
                   ),
+                  SizedBox(
+                    height: 10,
+                  ),
                   InfoTabWidget(dataEntity: counterState.currentDataEntity)
                 ],
               );
