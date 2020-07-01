@@ -1,3 +1,4 @@
+import 'package:PureWeather/accuweather/AccuWeatherIcons.dart';
 import 'package:PureWeather/accuweather/current/current_data_entity.dart';
 import 'package:PureWeather/accuweather/hourly/accu_hourly_data_entity.dart';
 import 'package:PureWeather/home/HomeInfo.dart';
@@ -47,9 +48,9 @@ class _HomeDetailWidgetState extends State<HomeDetailWidget> {
           child: Text(
             widget.dataEntity != null
                 ? DateUtil.formatDate(
-                    DateTime.parse(widget.dataEntity.localObservationDateTime),
-                    format:
-                        "yyyy-MM-dd HH:mm:ss") //.widget.dataEntity.dateTime.toString()
+                DateTime.parse(widget.dataEntity.localObservationDateTime),
+                format:
+                "yyyy-MM-dd HH:mm:ss") //.widget.dataEntity.dateTime.toString()
                 : "Loading",
             style: TextStyle(fontSize: 20),
             strutStyle: StrutStyle(),
@@ -58,7 +59,9 @@ class _HomeDetailWidgetState extends State<HomeDetailWidget> {
         Padding(
           padding: EdgeInsets.all(16),
           child: Icon(
-            WeatherIcons.cloudy,
+            widget.dataEntity != null
+                ? AccuWeatherIcons.getIcon(widget.dataEntity.weatherIcon)
+                : WeatherIcons.day_sunny,
             size: 100,
           ),
         ),
@@ -68,6 +71,16 @@ class _HomeDetailWidgetState extends State<HomeDetailWidget> {
             widget.dataEntity != null
                 ? widget.dataEntity.temperature.metric.toString()
                 : "26!",
+            style: TextStyle(fontSize: 20),
+            strutStyle: StrutStyle(),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.all(16),
+          child: Text(
+            widget.dataEntity != null
+                ? widget.dataEntity.weatherText
+                : "loading",
             style: TextStyle(fontSize: 20),
             strutStyle: StrutStyle(),
           ),

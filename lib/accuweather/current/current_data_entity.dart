@@ -9,7 +9,7 @@ class CurrentDataEntity with JsonConvert<CurrentDataEntity> {
   @JSONField(name: "WeatherText")
   String weatherText;
   @JSONField(name: "WeatherIcon")
-  double weatherIcon;
+  int weatherIcon;
   @JSONField(name: "HasPrecipitation")
   bool hasPrecipitation;
   @JSONField(name: "PrecipitationType")

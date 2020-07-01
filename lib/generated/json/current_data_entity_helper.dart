@@ -12,7 +12,7 @@ currentDataEntityFromJson(CurrentDataEntity data, Map<String, dynamic> json) {
     data.weatherText = json['WeatherText']?.toString();
   }
   if (json['WeatherIcon'] != null) {
-    data.weatherIcon = json['WeatherIcon']?.toDouble();
+    data.weatherIcon = json['WeatherIcon']?.toInt();
   }
   if (json['HasPrecipitation'] != null) {
     data.hasPrecipitation = json['HasPrecipitation'];
