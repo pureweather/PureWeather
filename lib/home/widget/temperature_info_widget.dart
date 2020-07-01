@@ -3,7 +3,11 @@ import 'package:flutter/material.dart';
 //detail type  widget
 class TemperatureInfoWidget extends StatefulWidget {
   TemperatureInfoWidget({Key key}) : super(key: key);
-
+@override
+  StatefulElement createElement() {
+    // TODO: implement createElement
+    return super.createElement();
+  }
   @override
   _TemperatureInfoWidgetState createState() => _TemperatureInfoWidgetState();
 }

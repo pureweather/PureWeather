@@ -3,15 +3,27 @@ import 'package:PureWeather/home/HomeInfo.dart';
 import 'package:flutter/material.dart';
 import 'package:weather_icons/weather_icons.dart';
 
-class HomeDetailWidget extends StatelessWidget {
-  AccuHourlyDataEntity accuHourlyDataEntity;
+// ignore: must_be_immutable
+class HomeDetailWidget extends StatefulWidget {
+  final AccuHourlyDataEntity dataEntity;
   HomeInfo _homeInfo = HomeInfo();
-  String placeName="";
+  String placeName = "";
 
-  HomeDetailWidget(AccuHourlyDataEntity accuHourlyDataEntity,String placeName, {Key key})
-      : super(key: key) {
-    this.accuHourlyDataEntity = accuHourlyDataEntity;
-    this.placeName=placeName;
+  HomeDetailWidget({Key key, this.dataEntity, this.placeName})
+      : super(key: key);
+
+  @override
+  _HomeDetailWidgetState createState() => _HomeDetailWidgetState();
+}
+
+class _HomeDetailWidgetState extends State<HomeDetailWidget> {
+  HomeInfo _homeInfo;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    _homeInfo = HomeInfo();
+    super.initState();
   }
 
   @override
@@ -23,7 +35,7 @@ class HomeDetailWidget extends StatelessWidget {
         Padding(
           padding: EdgeInsets.all(16),
           child: Text(
-            placeName,
+            widget.placeName,
             style: TextStyle(fontSize: 20),
             strutStyle: StrutStyle(),
           ),
@@ -31,7 +43,9 @@ class HomeDetailWidget extends StatelessWidget {
         Padding(
           padding: EdgeInsets.all(16),
           child: Text(
-            _homeInfo.time,
+            widget.dataEntity != null
+                ? widget.dataEntity.dateTime.toString()
+                : "Loading",
             style: TextStyle(fontSize: 20),
             strutStyle: StrutStyle(),
           ),
@@ -39,17 +53,16 @@ class HomeDetailWidget extends StatelessWidget {
         Padding(
           padding: EdgeInsets.all(16),
           child: Icon(
-            WeatherIcons.night_partly_cloudy,
-            color: Colors.green,
+            WeatherIcons.cloudy,
             size: 100,
           ),
         ),
         Padding(
           padding: EdgeInsets.all(16),
           child: Text(
-            accuHourlyDataEntity == null
-                ? "26"
-                : accuHourlyDataEntity.temperature.toString(),
+            widget.dataEntity != null
+                ? widget.dataEntity.temperature.toString()
+                : "26!",
             style: TextStyle(fontSize: 20),
             strutStyle: StrutStyle(),
           ),

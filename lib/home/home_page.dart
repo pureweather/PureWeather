@@ -33,7 +33,9 @@ class _HomePageState extends State<HomePage> {
               return Column(
                 children: [
                   HomeDetailWidget(
-                      counterState.getFirstEntity(), counterState.areaName),
+                    dataEntity: counterState.getFirstEntity(),
+                    placeName: counterState.areaName,
+                  ),
                   InfoTabWidget()
                 ],
               );
