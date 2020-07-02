@@ -1,6 +1,5 @@
 import 'package:PureWeather/accuweather/accu_data_loader/AccuDataType.dart';
 import 'package:PureWeather/accuweather/accu_data_loader/accu_data_loader_bloc.dart';
-import 'package:PureWeather/accuweather/hourly/accu_hourly_data_entity.dart';
 import 'package:PureWeather/home/widget/home_detail_widget.dart';
 import 'package:PureWeather/home/widget/info_tab_widget.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +12,8 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage>
+    with AutomaticKeepAliveClientMixin {
   final AccuDataLoaderBloc _bloc = AccuDataLoaderBloc();
 
   @override
@@ -46,4 +46,8 @@ class _HomePageState extends State<HomePage> {
               );
             }));
   }
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
 }

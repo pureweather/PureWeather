@@ -7,9 +7,13 @@ class SettingPage extends StatefulWidget {
   _SettingPageState createState() => _SettingPageState();
 }
 
-class _SettingPageState extends State<SettingPage> {
+class _SettingPageState extends State<SettingPage>
+    with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
     return Container();
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

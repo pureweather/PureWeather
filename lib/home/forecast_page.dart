@@ -7,9 +7,13 @@ class ForecastPage extends StatefulWidget {
   _ForecastPageState createState() => _ForecastPageState();
 }
 
-class _ForecastPageState extends State<ForecastPage> {
+class _ForecastPageState extends State<ForecastPage>
+    with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
     return Container();
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
